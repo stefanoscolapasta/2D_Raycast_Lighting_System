@@ -1,0 +1,250 @@
+﻿  main.cpp
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(128,55): warning C4244: 'argomento': conversione da 'int' a 'T'. Possibile perdita di dati.
+          with
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(128,36): warning C4244: 'argomento': conversione da 'int' a 'T'. Possibile perdita di dati.
+          with
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(181,41): warning C4244: 'argomento': conversione da 'int' a 'T'. Possibile perdita di dati.
+          with
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(181,37): warning C4244: 'argomento': conversione da 'int' a 'T'. Possibile perdita di dati.
+          with
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(182,41): warning C4244: 'argomento': conversione da 'int' a 'T'. Possibile perdita di dati.
+          with
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(182,37): warning C4244: 'argomento': conversione da 'int' a 'T'. Possibile perdita di dati.
+          with
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(183,41): warning C4244: 'argomento': conversione da 'int' a 'T'. Possibile perdita di dati.
+          with
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(183,37): warning C4244: 'argomento': conversione da 'int' a 'T'. Possibile perdita di dati.
+          with
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(184,41): warning C4244: 'argomento': conversione da 'int' a 'T'. Possibile perdita di dati.
+          with
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(184,37): warning C4244: 'argomento': conversione da 'int' a 'T'. Possibile perdita di dati.
+          with
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(204,33): warning C4244: 'argomento': conversione da 'int' a 'T'. Possibile perdita di dati.
+          with
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(204,29): warning C4244: 'argomento': conversione da 'int' a 'T'. Possibile perdita di dati.
+          with
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(205,33): warning C4244: 'argomento': conversione da 'int' a 'T'. Possibile perdita di dati.
+          with
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(205,29): warning C4244: 'argomento': conversione da 'int' a 'T'. Possibile perdita di dati.
+          with
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(206,33): warning C4244: 'argomento': conversione da 'int' a 'T'. Possibile perdita di dati.
+          with
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(206,29): warning C4244: 'argomento': conversione da 'int' a 'T'. Possibile perdita di dati.
+          with
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(207,33): warning C4244: 'argomento': conversione da 'int' a 'T'. Possibile perdita di dati.
+          with
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(207,29): warning C4244: 'argomento': conversione da 'int' a 'T'. Possibile perdita di dati.
+          with
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(218,45): warning C4244: 'argomento': conversione da 'int' a 'T'. Possibile perdita di dati.
+          with
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(218,41): warning C4244: 'argomento': conversione da 'int' a 'T'. Possibile perdita di dati.
+          with
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(219,45): warning C4244: 'argomento': conversione da 'int' a 'T'. Possibile perdita di dati.
+          with
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(219,41): warning C4244: 'argomento': conversione da 'int' a 'T'. Possibile perdita di dati.
+          with
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(220,45): warning C4244: 'argomento': conversione da 'int' a 'T'. Possibile perdita di dati.
+          with
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(220,41): warning C4244: 'argomento': conversione da 'int' a 'T'. Possibile perdita di dati.
+          with
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(221,45): warning C4244: 'argomento': conversione da 'int' a 'T'. Possibile perdita di dati.
+          with
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(221,41): warning C4244: 'argomento': conversione da 'int' a 'T'. Possibile perdita di dati.
+          with
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(229,61): warning C4244: 'argomento': conversione da 'T' a 'T'. Possibile perdita di dati.
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(230,81): warning C4244: 'argomento': conversione da 'T' a 'T'. Possibile perdita di dati.
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(230,61): warning C4244: 'argomento': conversione da 'T' a 'T'. Possibile perdita di dati.
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(231,64): warning C4244: 'argomento': conversione da 'T' a 'T'. Possibile perdita di dati.
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(258,58): warning C4244: 'argomento': conversione da 'T' a 'T'. Possibile perdita di dati.
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(259,78): warning C4244: 'argomento': conversione da 'T' a 'T'. Possibile perdita di dati.
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(259,58): warning C4244: 'argomento': conversione da 'T' a 'T'. Possibile perdita di dati.
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(360,27): warning C4018: '<': errata corrispondenza tra signed e unsigned
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(365,82): warning C4244: 'argomento': conversione da '_Ty' a 'T'. Possibile perdita di dati.
+          with
+          [
+              _Ty=Coord
+          ]
+          and
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(365,63): warning C4244: 'argomento': conversione da '_Ty' a 'T'. Possibile perdita di dati.
+          with
+          [
+              _Ty=Coord
+          ]
+          and
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(366,86): warning C4244: 'argomento': conversione da '_Ty' a 'T'. Possibile perdita di dati.
+          with
+          [
+              _Ty=Coord
+          ]
+          and
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(366,65): warning C4244: 'argomento': conversione da '_Ty' a 'T'. Possibile perdita di dati.
+          with
+          [
+              _Ty=Coord
+          ]
+          and
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(367,86): warning C4244: 'argomento': conversione da '_Ty' a 'T'. Possibile perdita di dati.
+          with
+          [
+              _Ty=Coord
+          ]
+          and
+          [
+              T=float
+          ]
+D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Illumination\main.cpp(367,65): warning C4244: 'argomento': conversione da '_Ty' a 'T'. Possibile perdita di dati.
+          with
+          [
+              _Ty=Coord
+          ]
+          and
+          [
+              T=float
+          ]
+  Illumination.vcxproj -> D:\Stefano\Documents\Esperimenti Programmazione\Grafica3D\Illumination\Debug\Illumination.exe
