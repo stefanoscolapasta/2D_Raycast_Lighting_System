@@ -37,8 +37,8 @@
 This is an experimental project I'm working on to learn about Raycasting, Computer Graphics and OpenGl.\
 
 > To get a better grip on what polygon triangulation is and why it is important, feel free to open the following links:\
-> [Polygon Triangulation](https://en.wikipedia.org/wiki/Polygon_triangulation)  
-> [Delaunay Triangulation](https://en.wikipedia.org/wiki/Delaunay_triangulation)
+> * [Polygon Triangulation](https://en.wikipedia.org/wiki/Polygon_triangulation)  
+> * [Delaunay Triangulation](https://en.wikipedia.org/wiki/Delaunay_triangulation)
 
 
 It's also my first ever program/code written in C++. I do anyway realize the monstrosities I have writtend and how bad the source code is.\
