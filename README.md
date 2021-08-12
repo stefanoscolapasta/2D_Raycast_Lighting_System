@@ -6,7 +6,7 @@
   <h1 align="center">Lighting Raycast System</h1>
 
   <p align="center">
-    This is a simple lighting system based on raycasting, using SFML.
+    This is a simple lighting system based on raycasting and polygon triangulation, using SFML.
     <br />
     <br />
     <br />
@@ -34,32 +34,35 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is and experimental project I'm working on to learn about Raycasting, Computer Graphics, OpenGl.
-<br />
-It's also my first ever program/code written in C++. I do anyway realize the monstruosities I have writtend and how bad the source code is.
-<br />
-A total refactor of the project will be vital and non-postponable.
-<br />
-<br />
-<br />
-A demo of the lighting system.
-<br />
-<br />
-![Raycast lighting](https://github.com/stefanoscolapasta/CppRayCastLightingSystem/blob/master/res/Demo.gif)
-<br />
-<br /><br />
-Here I show how the raycasts are thrown and their contact points.
-<br /><br />
-![Raycast contact points](https://github.com/stefanoscolapasta/CppRayCastLightingSystem/blob/master/res/raycastsContactAndBoundary.gif)
-<br />
-<br /><br />
+This is an experimental project I'm working on to learn about Raycasting, Computer Graphics and OpenGl.  
+
+> To get a better grip on what polygon triangulation is and why it is important, feel free to open the following links:  
+> * [Polygon Triangulation](https://en.wikipedia.org/wiki/Polygon_triangulation)  
+> * [Delaunay Triangulation](https://en.wikipedia.org/wiki/Delaunay_triangulation)
+
+
+It's also my first ever program/code written in C++. I do anyway realize the monstrosities I have writtend and how bad the source code is.\
+A total refactor of the project will be vital and non-postponable.  
+  
+A demo of the lighting system. 
+  
+![](https://github.com/stefanoscolapasta/CppRayCastLightingSystem/blob/master/res/Demo.gif)  
+  
+  
+Here I show how the raycasts are thrown and their contact points.  
+  
+![](https://github.com/stefanoscolapasta/CppRayCastLightingSystem/blob/master/res/raycastsContactAndBoundary.gif)  
+  
+  
 To be able to fill with colour a concave figure a form of triangulation is required, I decided to use the EarCut algorithm, a simple and fast polygon triangulation algorithm.
-The result is not perfect, but can be improved.
-<br /><br />
-![Triangulation](https://github.com/stefanoscolapasta/CppRayCastLightingSystem/blob/master/res/triangulation.gif)
+The result is not perfect, but can be improved. 
+  
+![](https://github.com/stefanoscolapasta/CppRayCastLightingSystem/blob/master/res/triangulation.gif)
+
 ### Built With
 
 * [C++](https://isocpp.org/)
+* [SFML](https://www.sfml-dev.org/download.php)
 
 
 
