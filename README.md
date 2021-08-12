@@ -34,7 +34,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is and experimental project I'm working on to learn about Raycasting, Computer Graphics, OpenGl.
+This is and experimental project I'm working on to learn about Raycasting, Computer Graphics and OpenGl.
 <br />
 It's also my first ever program/code written in C++. I do anyway realize the monstrosities I have writtend and how bad the source code is.
 <br />
