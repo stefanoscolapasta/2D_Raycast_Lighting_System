@@ -36,7 +36,7 @@
 
 This is and experimental project I'm working on to learn about Raycasting, Computer Graphics, OpenGl.
 <br />
-It's also my first ever program/code written in C++. I do anyway realize the monstruosities I have writtend and how bad the source code is.
+It's also my first ever program/code written in C++. I do anyway realize the monstrosities I have writtend and how bad the source code is.
 <br />
 A total refactor of the project will be vital and non-postponable.
 <br />
