@@ -12,15 +12,23 @@
 
 #define roundz(x,d) ((floor(((x)*pow(10,d))+.5))/pow(10,d))
 using namespace std;
-
+using Coord = double;
+using N = uint32_t;
+using Point = std::array<Coord, 2>;
 class Utilities {
 
 public:
 
     int Signum(float x)
     {
-        if (x > 0) return 1;
-        else return -1;
+        if (x > 0)
+        {
+            return 1;
+        }
+        else
+        {
+            return -1;
+        }
     }
 
     int Get_line_intersection(float p0_x, float p0_y, float p1_x, float p1_y,
@@ -131,173 +139,43 @@ public:
 
 };
 
-class TextureUtilities {
+
+class Raycasts {
 public:
-    sf::Texture LoadTexture(string textureName)
+    void GenerateRaycasts(vector<sf::VertexArray> &lines, vector<vector<sf::VertexArray>> allSegmentsOfQuads, sf::Mouse &mouse, sf::RenderWindow &window)
     {
-        sf::Texture texture;
-        if (!texture.loadFromFile(textureName))
-        {
-            cout << "Error";
-        }
-        return texture;
-    }
-
-    sf::Texture BlankTexture(int width, int height)
-    {
-        sf::Texture texture;
-        if (!texture.create(width, height))
-        {
-            cout << "Error";
-        }
-        return texture;
-    }
-
-};
-
-int main()
-{
-    sf::Font font;
-    font.loadFromFile("arial.ttf");
-    // create the window
-    sf::RenderWindow window(sf::VideoMode(800, 600), "My window");
-    int radious = max(window.getSize().x, window.getSize().y) * 2;
-    Utilities utils;
-    srand((unsigned)time(NULL));
-    vector<sf::VertexArray> lines;
-    vector<vector<sf::VertexArray>> allSegmentsOfQuads; //TODO: basterebbe un vector<sf::VertexArray> brutto rincoglionito
-    int numberOfBoxes = 5;
-
-    sf::VertexArray wall(sf::Quads, 4);
-    int x1;
-    int x2;
-    int y1;
-    int y2;
-    x1 = rand() % window.getSize().x;
-    x2 = x1 + rand() % (window.getSize().x - x1);
-    y1 = rand() % window.getSize().y;
-    y2 = y1 + rand() % (window.getSize().y - y1);
-
-    wall[0].position = sf::Vector2f(x1, y2);
-    wall[1].position = sf::Vector2f(x1, y1);
-    wall[2].position = sf::Vector2f(x2, y1);
-    wall[3].position = sf::Vector2f(x2, y2);
-
-    vector<sf::VertexArray> segmentsOfQuad = utils.ExtractSegmentsFromQuad(wall);
-    allSegmentsOfQuads.push_back(segmentsOfQuad);
-
-    for (int i = 0; i < numberOfBoxes-1; i++)
-    {     
-        bool built = false;
-        int x1;
-        int x2;
-        int y1;
-        int y2;
-
-        while (!built)
-        {
-            x1 = rand() % window.getSize().x;
-            x2 = x1 + rand() % (window.getSize().x - x1);
-            y1 = rand() % window.getSize().y;
-            y2 = y1 + rand() % (window.getSize().y - y1);
-
-            sf::Vector2f v1(x1, y2);
-            sf::Vector2f v2(x1, y1);
-            sf::Vector2f v3(x2, y1);
-            sf::Vector2f v4(x2, y2);
-            if (utils.DoesRectOverlap(allSegmentsOfQuads, v1, v3))
-            {
-                built = false;
-            }
-            else
-            {
-                built = true;
-            }
-        }
-
-        wall[0].position = sf::Vector2f(x1, y2);
-        wall[1].position = sf::Vector2f(x1, y1);
-        wall[2].position = sf::Vector2f(x2, y1);
-        wall[3].position = sf::Vector2f(x2, y2);
-        segmentsOfQuad = utils.ExtractSegmentsFromQuad(wall);
-        allSegmentsOfQuads.push_back(segmentsOfQuad);
-
-    }
-
-    sf::VertexArray externalWall(sf::Quads, 4);
-    externalWall[0].position = sf::Vector2f(0, 0);
-    externalWall[1].position = sf::Vector2f(window.getSize().x, 0);
-    externalWall[2].position = sf::Vector2f(window.getSize().x, window.getSize().y);
-    externalWall[3].position = sf::Vector2f(0, window.getSize().y);
-    segmentsOfQuad = utils.ExtractSegmentsFromQuad(externalWall);
-    allSegmentsOfQuads.push_back(segmentsOfQuad);
-
-    sf::Mouse mouse;
-    window.setMouseCursorVisible(false);
-    sf::CircleShape circle(10);
-    circle.setFillColor(sf::Color::Yellow);
-
-    // run the program as long as the window is open
-
-    while (window.isOpen())
-    {
-        lines.clear();
-        circle.setPosition(sf::Vector2f(mouse.getPosition(window).x - circle.getRadius(), mouse.getPosition(window).y - circle.getRadius()));
-
-        sf::Event event;
-        while (window.pollEvent(event))
-        {
-
-            if (event.type == sf::Event::Closed)
-                window.close();
-        }
-
-        window.clear();
-
-        sf::VertexArray right(sf::Lines, 2);
-        right[0].position = sf::Vector2f(window.getSize().x, 0);
-        right[0].position = sf::Vector2f(window.getSize().x, window.getSize().y);
-
+        Utilities utils;
         for (auto& segments : allSegmentsOfQuads)
         {
             for (auto& segment : segments)
             {
-                for (int i = 0; i < 2; i++)
+                //questo passaggio andrebbe sistemato per evitare duplicati, ad ogni iterazione riprendo lo stesso vertice
+                for (int i = 0; i < 2; i++) //This for is necessary to get both vertices of each segment
                 {
                     sf::VertexArray line(sf::Lines, 2);
                     line[0].position = sf::Vector2f(mouse.getPosition(window));
                     line[1].position = segment[i].position;
 
-                    float d_omega = 0.05f;
+                    float d_omega = 0.03f;
                     float angle = atan((float)(mouse.getPosition(window).y - segment[i].position.y) / (float)(mouse.getPosition(window).x - segment[i].position.x));
 
                     sf::VertexArray lineFollowing1(sf::Lines, 2);
                     lineFollowing1[0].position = sf::Vector2f(mouse.getPosition(window));
                     sf::VertexArray lineFollowing2(sf::Lines, 2);
                     lineFollowing2[0].position = sf::Vector2f(mouse.getPosition(window));
+                    float difference = (float)(segment[i].position.x - mouse.getPosition(window).x);
 
-                    if (mouse.getPosition(window).x < segment[i].position.x)
-                    {
-                        lineFollowing1[1].position = sf::Vector2f(
-                            mouse.getPosition(window).x + 2 * window.getSize().x * cos(angle + d_omega),
-                            mouse.getPosition(window).y + 2 * window.getSize().x * sin(angle + d_omega)
-                        );
-                        lineFollowing2[1].position = sf::Vector2f(
-                            mouse.getPosition(window).x + 2 * window.getSize().x * cos(angle - d_omega),
-                            mouse.getPosition(window).y + 2 * window.getSize().x * sin(angle - d_omega)
-                        );
-                    }
-                    else
-                    {
-                        lineFollowing1[1].position = sf::Vector2f(
-                            mouse.getPosition(window).x - 2 * window.getSize().x * cos(angle + d_omega),
-                            mouse.getPosition(window).y - 2 * window.getSize().x * sin(angle + d_omega)
-                        );
-                        lineFollowing2[1].position = sf::Vector2f(
-                            mouse.getPosition(window).x - 2 * window.getSize().x * cos(angle - d_omega),
-                            mouse.getPosition(window).y - 2 * window.getSize().x * sin(angle - d_omega)
-                        );
-                    }
+                    int sign = utils.Signum(difference);
+
+                    lineFollowing1[1].position = sf::Vector2f(
+                        mouse.getPosition(window).x + ((sign) * (2 * window.getSize().x * cos(angle + d_omega))),
+                        mouse.getPosition(window).y + ((sign) * (2 * window.getSize().x * sin(angle + d_omega)))
+                    );
+                    lineFollowing2[1].position = sf::Vector2f(
+                        mouse.getPosition(window).x + ((sign) * (2 * window.getSize().x * cos(angle - d_omega))),
+                        mouse.getPosition(window).y + ((sign) * (2 * window.getSize().x * sin(angle - d_omega)))
+                    );
+
                     lines.push_back(lineFollowing1);
                     lines.push_back(lineFollowing2);
                     lines.push_back(line);
@@ -305,8 +183,32 @@ int main()
 
             }
         }
+        this->CheckForIntersectionsAndCutLinesAtIntersection(lines, allSegmentsOfQuads, mouse, window);  
+    }
+
+    vector<std::pair<float, sf::Vector2f>> SortRaycastsByAtan(vector<sf::VertexArray>& lines, sf::Mouse& mouse, sf::RenderWindow& window)
+    {
+        vector<std::pair<float, sf::Vector2f>> clockwisePoints;
+        for (auto& line : lines)
+        {
+            float angle = atan2((float)(mouse.getPosition(window).x - line[1].position.x), (float)(mouse.getPosition(window).y - line[1].position.y));
+            std::pair<float, sf::Vector2f> angleAndPoint{ angle, line[1].position };
+            clockwisePoints.push_back(angleAndPoint);
+        }
+
+        std::sort(clockwisePoints.begin(), clockwisePoints.end(), [](const auto& first, const auto& second)
+            {
+                return first.first < second.first;
+            });
+        return clockwisePoints;
+    }
 
 
+private:
+    void CheckForIntersectionsAndCutLinesAtIntersection(vector<sf::VertexArray>& lines, vector<vector<sf::VertexArray>> allSegmentsOfQuads, sf::Mouse& mouse, sf::RenderWindow& window)
+    {
+        Utilities utils;
+        //Check for intersection with the rectangles
         for (auto& line : lines)
         {
             line[0].position = sf::Vector2f(mouse.getPosition(window));
@@ -327,50 +229,101 @@ int main()
                 }
             }
         }
+    }
 
-        vector<std::pair<float, sf::Vector2f>> clockwisePoints;
-        for (auto& line : lines)
+    
+
+};
+
+
+class Environment {
+public:
+    vector<vector<sf::VertexArray>> GenerateRectanglesAndBoundary(sf::RenderWindow& window)
+    {
+        Utilities utils;
+        vector<vector<sf::VertexArray>> allSegmentsOfQuads; //TODO: basterebbe un vector<sf::VertexArray> brutto rincoglionito
+        int numberOfBoxes = 5;
+        srand((unsigned)time(NULL));
+        sf::VertexArray wall(sf::Quads, 4);
+        int x1;
+        int x2;
+        int y1;
+        int y2;
+        x1 = rand() % window.getSize().x;
+        x2 = x1 + rand() % (window.getSize().x - x1);
+        y1 = rand() % window.getSize().y;
+        y2 = y1 + rand() % (window.getSize().y - y1);
+
+        wall[0].position = sf::Vector2f(x1, y2);
+        wall[1].position = sf::Vector2f(x1, y1);
+        wall[2].position = sf::Vector2f(x2, y1);
+        wall[3].position = sf::Vector2f(x2, y2);
+
+        vector<sf::VertexArray> segmentsOfQuad = utils.ExtractSegmentsFromQuad(wall);
+        allSegmentsOfQuads.push_back(segmentsOfQuad);
+
+        for (int i = 0; i < numberOfBoxes - 1; i++)
         {
-            float angle = atan2((float)(mouse.getPosition(window).x - line[1].position.x), (float)(mouse.getPosition(window).y - line[1].position.y));
-            std::pair<float, sf::Vector2f> angleAndPoint{ angle, line[1].position };
-            clockwisePoints.push_back(angleAndPoint);
-        }
+            bool built = false;
+            int x1;
+            int x2;
+            int y1;
+            int y2;
 
-        std::sort(clockwisePoints.begin(), clockwisePoints.end(), [](const auto& first, const auto& second)
+            while (!built)
             {
-                return first.first < second.first;
-            });
+                x1 = rand() % window.getSize().x;
+                x2 = x1 + rand() % (window.getSize().x - x1);
+                y1 = rand() % window.getSize().y;
+                y2 = y1 + rand() % (window.getSize().y - y1);
 
+                sf::Vector2f v1(x1, y2);
+                sf::Vector2f v2(x1, y1);
+                sf::Vector2f v3(x2, y1);
+                sf::Vector2f v4(x2, y2);
+                if (utils.DoesRectOverlap(allSegmentsOfQuads, v1, v3))
+                {
+                    built = false;
+                }
+                else
+                {
+                    built = true;
+                }
+            }
 
-        using Coord = double;
-        using N = uint32_t;
-        using Point = std::array<Coord, 2>;
-        std::vector<std::vector<Point>> polygon;
-        vector<Point> ps;
+            wall[0].position = sf::Vector2f(x1, y2);
+            wall[1].position = sf::Vector2f(x1, y1);
+            wall[2].position = sf::Vector2f(x2, y1);
+            wall[3].position = sf::Vector2f(x2, y2);
+            segmentsOfQuad = utils.ExtractSegmentsFromQuad(wall);
+            allSegmentsOfQuads.push_back(segmentsOfQuad);
 
-        for (auto& c : clockwisePoints)
-        {
-            Point p = { (Coord)c.second.x, (Coord)c.second.y };
-            ps.push_back(p);
         }
-        polygon.push_back(ps);
 
-        std::vector<N> indices = mapbox::earcut<N>(polygon);
+        sf::VertexArray externalWall(sf::Quads, 4);
+        externalWall[0].position = sf::Vector2f(0, 0);
+        externalWall[1].position = sf::Vector2f(window.getSize().x, 0);
+        externalWall[2].position = sf::Vector2f(window.getSize().x, window.getSize().y);
+        externalWall[3].position = sf::Vector2f(0, window.getSize().y);
+        segmentsOfQuad = utils.ExtractSegmentsFromQuad(externalWall);
+        allSegmentsOfQuads.push_back(segmentsOfQuad);
+        return allSegmentsOfQuads;
+    }
+};
 
-        for (int i = 0; i < indices.size(); i += 3)
+class DrawManager
+{
+public:
+    void DrawLightingPolygonFromTriangles(vector<sf::ConvexShape>& triangles, sf::RenderWindow& window)
+    {
+        for (auto& triangle : triangles)
         {
-            sf::ConvexShape triangle;
-            triangle.setFillColor(sf::Color::White);
-            triangle.setPointCount(3);
-            triangle.setOutlineColor(sf::Color::Black);
-            triangle.setOutlineThickness(3);
-            triangle.setPoint(0, sf::Vector2f(ps[indices[i]][0], ps[indices[i]][1]));
-            triangle.setPoint(1, sf::Vector2f(ps[indices[i+1]][0], ps[indices[i+1]][1]));
-            triangle.setPoint(2, sf::Vector2f(ps[indices[i+2]][0], ps[indices[i+2]][1]));
             window.draw(triangle);
         }
+    }
 
-
+    void DrawRaycasts(vector<sf::VertexArray> &lines, sf::RenderWindow& window)
+    {
         for (auto& line : lines)
         {
             line[0].color = sf::Color::Red;
@@ -382,18 +335,121 @@ int main()
             window.draw(contactPoint);
             window.draw(line);
         }
+    }
 
-        //for (int i = 0; i < clockwisePoints.size()-1; i++)
-        //{
-        //    sf::VertexArray side(sf::Lines, 2);
-        //    side[0].position = sf::Vector2f(clockwisePoints[i].second);
-        //    side[1].position = sf::Vector2f(clockwisePoints[i+1].second);
-        //    side[0].color = sf::Color::Green;
-        //    side[1].color = sf::Color::Green;
-        //    window.draw(side);
-        //}
+    void DrawContactPoints(vector<sf::VertexArray>& lines, sf::RenderWindow& window)
+    {
+        for (auto& line : lines)
+        {
+            sf::CircleShape contactPoint;
+            contactPoint.setFillColor(sf::Color::Red);
+            contactPoint.setRadius(5.5f);
+            contactPoint.setPosition(sf::Vector2f(line[1].position.x - contactPoint.getRadius(), line[1].position.y - contactPoint.getRadius()));
+            window.draw(contactPoint);
+        }
+    }
 
-        window.draw(circle);
+    void DrawLightingOutline(vector<std::pair<float, sf::Vector2f>> &clockwisePoints, sf::RenderWindow& window)
+    {
+        for (int i = 0; i < clockwisePoints.size()-1; i++)
+        {
+            sf::VertexArray side(sf::Lines, 2);
+            side[0].position = sf::Vector2f(clockwisePoints[i].second);
+            side[1].position = sf::Vector2f(clockwisePoints[i+1].second);
+            side[0].color = sf::Color::Green;
+            side[1].color = sf::Color::Green;
+            window.draw(side);
+        }
+    }
+
+};
+
+class EarCutTriangulationHandler {
+public:
+    vector<sf::ConvexShape> GenerateTrianglesFromPolygon(vector<std::pair<float, sf::Vector2f>> &clockwisePoints, sf::RenderWindow &window, bool drawOutline)
+    {
+        std::vector<std::vector<Point>> polygon;
+        vector<Point> ps;
+
+        for (auto& c : clockwisePoints)
+        {
+            Point p = { (Coord)c.second.x, (Coord)c.second.y };
+            ps.push_back(p);
+        }
+        polygon.push_back(ps);
+
+        std::vector<N> indices = mapbox::earcut<N>(polygon);
+        vector<sf::ConvexShape> triangles;
+        for (int i = 0; i < indices.size(); i += 3)
+        {
+            sf::ConvexShape triangle;
+            triangle.setFillColor(sf::Color::White);
+            triangle.setPointCount(3);
+            if (drawOutline)
+            {
+                triangle.setOutlineColor(sf::Color::Black);
+                triangle.setOutlineThickness(3);
+            }
+            triangle.setPoint(0, sf::Vector2f(ps[indices[i]][0], ps[indices[i]][1]));
+            triangle.setPoint(1, sf::Vector2f(ps[indices[i + 1]][0], ps[indices[i + 1]][1]));
+            triangle.setPoint(2, sf::Vector2f(ps[indices[i + 2]][0], ps[indices[i + 2]][1]));
+            triangles.push_back(triangle);
+        }
+        return triangles;
+    }
+};
+
+int main()
+{
+    // create the window
+    sf::RenderWindow window(sf::VideoMode(800, 600), "My window");
+
+    Utilities utils;
+
+    vector<sf::VertexArray> lines;
+
+    Environment environment;
+    vector<vector<sf::VertexArray>> allSegmentsOfQuads = environment.GenerateRectanglesAndBoundary(window);
+
+    sf::Mouse mouse;
+    window.setMouseCursorVisible(false);
+    sf::CircleShape spotlight(10);
+    spotlight.setFillColor(sf::Color::Yellow);
+
+    // run the program as long as the window is open
+
+    while (window.isOpen())
+    {
+        lines.clear();
+
+        spotlight.setPosition(sf::Vector2f(mouse.getPosition(window).x - spotlight.getRadius(), mouse.getPosition(window).y - spotlight.getRadius()));
+
+        sf::Event event;
+        while (window.pollEvent(event))
+        {
+
+            if (event.type == sf::Event::Closed)
+                window.close();
+        }
+
+        window.clear();
+
+        Raycasts raycasts;
+        raycasts.GenerateRaycasts(lines, allSegmentsOfQuads, mouse, window);
+        vector<std::pair<float, sf::Vector2f>> clockwisePoints = raycasts.SortRaycastsByAtan(lines, mouse, window);
+
+        EarCutTriangulationHandler triangulationHandler;
+        bool drawTrianglesOutline = false;
+
+        vector<sf::ConvexShape> triangles = triangulationHandler.GenerateTrianglesFromPolygon(clockwisePoints, window, drawTrianglesOutline);
+
+        DrawManager drawManager;
+        drawManager.DrawLightingPolygonFromTriangles(triangles, window);
+        drawManager.DrawContactPoints(lines, window);
+        drawManager.DrawLightingOutline(clockwisePoints, window);
+        drawManager.DrawRaycasts(lines, window);
+        window.draw(spotlight);
+
         // end the current frame
         window.display();
     }
