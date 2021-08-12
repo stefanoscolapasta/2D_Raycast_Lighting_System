@@ -243,11 +243,11 @@ int main()
     {
         lines.clear();
         circle.setPosition(sf::Vector2f(mouse.getPosition(window).x - circle.getRadius(), mouse.getPosition(window).y - circle.getRadius()));
-        // check all the window's events that were triggered since the last iteration of the loop
+
         sf::Event event;
         while (window.pollEvent(event))
         {
-            // "close requested" event: we close the window
+
             if (event.type == sf::Event::Closed)
                 window.close();
         }
@@ -362,19 +362,26 @@ int main()
             sf::ConvexShape triangle;
             triangle.setFillColor(sf::Color::White);
             triangle.setPointCount(3);
+            triangle.setOutlineColor(sf::Color::Black);
+            triangle.setOutlineThickness(3);
             triangle.setPoint(0, sf::Vector2f(ps[indices[i]][0], ps[indices[i]][1]));
             triangle.setPoint(1, sf::Vector2f(ps[indices[i+1]][0], ps[indices[i+1]][1]));
             triangle.setPoint(2, sf::Vector2f(ps[indices[i+2]][0], ps[indices[i+2]][1]));
             window.draw(triangle);
         }
 
-        //window.draw(shape);
-        //for (auto& line : lines)
-        //{
-        //    line[0].color = sf::Color::Red;
-        //    line[1].color = sf::Color::Red;
-        //    window.draw(line);
-        //}
+
+        for (auto& line : lines)
+        {
+            line[0].color = sf::Color::Red;
+            line[1].color = sf::Color::Red;
+            sf::CircleShape contactPoint;
+            contactPoint.setFillColor(sf::Color::Red);
+            contactPoint.setRadius(5.5f);
+            contactPoint.setPosition(sf::Vector2f(line[1].position.x - contactPoint.getRadius(), line[1].position.y - contactPoint.getRadius()));
+            window.draw(contactPoint);
+            window.draw(line);
+        }
 
         //for (int i = 0; i < clockwisePoints.size()-1; i++)
         //{
