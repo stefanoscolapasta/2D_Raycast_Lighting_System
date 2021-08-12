@@ -8,7 +8,6 @@
   <p align="center">
     This is a simple lighting system based on raycasting, using SFML.
     <br />
-    <a href="https://github.com/github_username/repo_name"><strong>Explore the docs »</strong></a>
     <br />
     <br />
   </p>
