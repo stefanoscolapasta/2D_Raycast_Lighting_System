@@ -36,16 +36,16 @@
 
 This is an experimental project I'm working on to learn about Raycasting, Computer Graphics and OpenGl.\
 To get a better grip on what polygon triangulation is and why it is important, feel free to open the following links:\
-[Polygon Triangulation](https://en.wikipedia.org/wiki/Polygon_triangulation)\
+[Polygon Triangulation](https://en.wikipedia.org/wiki/Polygon_triangulation)\ \
 [Delaunay Triangulation](https://en.wikipedia.org/wiki/Delaunay_triangulation)\
 It's also my first ever program/code written in C++. I do anyway realize the monstrosities I have writtend and how bad the source code is.\
-A total refactor of the project will be vital and non-postponable.\\\
-A demo of the lighting system.\\
-![](https://github.com/stefanoscolapasta/CppRayCastLightingSystem/blob/master/res/Demo.gif)\\\
-Here I show how the raycasts are thrown and their contact points.\\
-![](https://github.com/stefanoscolapasta/CppRayCastLightingSystem/blob/master/res/raycastsContactAndBoundary.gif)\\
+A total refactor of the project will be vital and non-postponable.\ \ \
+A demo of the lighting system.\ \
+![](https://github.com/stefanoscolapasta/CppRayCastLightingSystem/blob/master/res/Demo.gif)\ \ \
+Here I show how the raycasts are thrown and their contact points.\ \
+![](https://github.com/stefanoscolapasta/CppRayCastLightingSystem/blob/master/res/raycastsContactAndBoundary.gif)\ \
 To be able to fill with colour a concave figure a form of triangulation is required, I decided to use the EarCut algorithm, a simple and fast polygon triangulation algorithm.
-The result is not perfect, but can be improved.\\
+The result is not perfect, but can be improved.\ \
 ![](https://github.com/stefanoscolapasta/CppRayCastLightingSystem/blob/master/res/triangulation.gif)
 
 ### Built With
