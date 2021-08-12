@@ -39,7 +39,6 @@ This is an experimental project I'm working on to learn about Raycasting, Comput
 To get a better grip on what polygon triangulation is and why it is important, feel free to open the following links:
 <br />
 * [Polygon Triangulation](https://en.wikipedia.org/wiki/Polygon_triangulation)
-<br />
 * [Delaunay Triangulation](https://en.wikipedia.org/wiki/Delaunay_triangulation)
 <br />
 It's also my first ever program/code written in C++. I do anyway realize the monstrosities I have writtend and how bad the source code is.
@@ -51,18 +50,23 @@ A total refactor of the project will be vital and non-postponable.
 A demo of the lighting system.
 <br />
 <br />
-[Raycast lighting](https://github.com/stefanoscolapasta/CppRayCastLightingSystem/blob/master/res/Demo.gif)
+![Raycast lighting](https://github.com/stefanoscolapasta/CppRayCastLightingSystem/blob/master/res/Demo.gif)
 <br />
-<br /><br />
+<br />
+<br />
 Here I show how the raycasts are thrown and their contact points.
-<br /><br />
-[Raycast contact points](https://github.com/stefanoscolapasta/CppRayCastLightingSystem/blob/master/res/raycastsContactAndBoundary.gif)
 <br />
-<br /><br />
+<br />
+![Raycast contact points](https://github.com/stefanoscolapasta/CppRayCastLightingSystem/blob/master/res/raycastsContactAndBoundary.gif)
+<br />
+<br />
+<br />
 To be able to fill with colour a concave figure a form of triangulation is required, I decided to use the EarCut algorithm, a simple and fast polygon triangulation algorithm.
 The result is not perfect, but can be improved.
-<br /><br />
-[Triangulation](https://github.com/stefanoscolapasta/CppRayCastLightingSystem/blob/master/res/triangulation.gif)
+<br />
+<br />
+![Triangulation](https://github.com/stefanoscolapasta/CppRayCastLightingSystem/blob/master/res/triangulation.gif)
+
 ### Built With
 
 * [C++](https://isocpp.org/)
