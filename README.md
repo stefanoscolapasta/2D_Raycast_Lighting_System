@@ -40,9 +40,19 @@ This is and experimental project I'm working on to learn about Raycasting, Compu
 It's also my first ever program/code written in C++. I do anyway realize the monstruosities I have writtend and how bad the source code is.
 <br />
 A total refactor of the project will be vital and non-postponable.
+<br />
+<br />
+A demo of the lighting system.
 ![Raycast lighting](https://github.com/stefanoscolapasta/CppRayCastLightingSystem/blob/master/res/Demo.gif)
+<br />
+<br />
+Here I show how the raycasts are thrown and their contact points.
 ![Raycast contact points](https://github.com/stefanoscolapasta/CppRayCastLightingSystem/blob/master/res/raycastsContactAndBoundary.gif)
-![Raycast lighting](https://github.com/stefanoscolapasta/CppRayCastLightingSystem/blob/master/res/triangulation.gif)
+<br />
+<br />
+To be able to fill with colour a concave figure a form of triangulation is required, I decided to use the EarCut algorithm, a simple and fast polygon triangulation algorithm.
+The result is not perfect, but can be improved.
+![Triangulation](https://github.com/stefanoscolapasta/CppRayCastLightingSystem/blob/master/res/triangulation.gif)
 ### Built With
 
 * [C++](https://isocpp.org/)
