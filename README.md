@@ -40,7 +40,9 @@ This is and experimental project I'm working on to learn about Raycasting, Compu
 It's also my first ever program/code written in C++. I do anyway realize the monstruosities I have writtend and how bad the source code is.
 <br />
 A total refactor of the project will be vital and non-postponable.
-
+![Raycast lighting](https://github.com/stefanoscolapasta/CppRayCastLightingSystem/blob/master/res/Demo.gif)
+![Raycast contact points](https://github.com/stefanoscolapasta/CppRayCastLightingSystem/blob/master/res/raycastsContactAndBoundary.gif)
+![Raycast lighting](https://github.com/stefanoscolapasta/CppRayCastLightingSystem/blob/master/res/triangulation.gif)
 ### Built With
 
 * [C++](https://isocpp.org/)
