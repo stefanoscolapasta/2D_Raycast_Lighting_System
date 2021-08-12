@@ -37,7 +37,6 @@
 This is an experimental project I'm working on to learn about Raycasting, Computer Graphics and OpenGl.
 <br />
 To get a better grip on what polygon triangulation is and why it is important, feel free to open the following links:
-<br />
 * [Polygon Triangulation](https://en.wikipedia.org/wiki/Polygon_triangulation)
 * [Delaunay Triangulation](https://en.wikipedia.org/wiki/Delaunay_triangulation)
 <br />
