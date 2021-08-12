@@ -34,9 +34,9 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is an experimental project I'm working on to learn about Raycasting, Computer Graphics and OpenGl.\
+This is an experimental project I'm working on to learn about Raycasting, Computer Graphics and OpenGl.  
 
-> To get a better grip on what polygon triangulation is and why it is important, feel free to open the following links:\
+> To get a better grip on what polygon triangulation is and why it is important, feel free to open the following links:  
 > * [Polygon Triangulation](https://en.wikipedia.org/wiki/Polygon_triangulation)  
 > * [Delaunay Triangulation](https://en.wikipedia.org/wiki/Delaunay_triangulation)
 
