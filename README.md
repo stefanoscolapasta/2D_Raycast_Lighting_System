@@ -9,11 +9,8 @@
 <!-- PROJECT LOGO -->
 <br />
 <p align="center">
-  <a href="https://github.com/github_username/repo_name">
-    <img src="https://github.com/zucchero-sintattico/Jhaturanga/blob/main/src/main/resources/logo/LogoNoSasso.png" alt="Logo" width="700" height="500">
-  </a>
 
-  <h3 align="center">JHATURANGA</h3>
+  <h3 align="center">Lighting raycast system</h3>
 
   <p align="center">
     This is a simple lighting system based on raycasting, using SFML.
