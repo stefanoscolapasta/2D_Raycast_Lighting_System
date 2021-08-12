@@ -38,9 +38,9 @@ This is an experimental project I'm working on to learn about Raycasting, Comput
 <br />
 To get a better grip on what polygon triangulation is and why it is important, feel free to open the following links:
 <br />
-![Polygon Triangulation](https://en.wikipedia.org/wiki/Polygon_triangulation)
+![Polygon Triangulation] (https://en.wikipedia.org/wiki/Polygon_triangulation)
 <br />
-![Delaunay Triangulation](https://en.wikipedia.org/wiki/Delaunay_triangulation)
+![Delaunay Triangulation] (https://en.wikipedia.org/wiki/Delaunay_triangulation)
 <br />
 It's also my first ever program/code written in C++. I do anyway realize the monstrosities I have writtend and how bad the source code is.
 <br />
