@@ -50,14 +50,14 @@ A total refactor of the project will be vital and non-postponable.
 A demo of the lighting system.
 <br />
 <br />
-![Raycast lighting](https://github.com/stefanoscolapasta/CppRayCastLightingSystem/blob/master/res/Demo.gif)
+![](https://github.com/stefanoscolapasta/CppRayCastLightingSystem/blob/master/res/Demo.gif)
 <br />
 <br />
 <br />
 Here I show how the raycasts are thrown and their contact points.
 <br />
 <br />
-![Raycast contact points](https://github.com/stefanoscolapasta/CppRayCastLightingSystem/blob/master/res/raycastsContactAndBoundary.gif)
+![](https://github.com/stefanoscolapasta/CppRayCastLightingSystem/blob/master/res/raycastsContactAndBoundary.gif)
 <br />
 <br />
 <br />
@@ -65,7 +65,7 @@ To be able to fill with colour a concave figure a form of triangulation is requi
 The result is not perfect, but can be improved.
 <br />
 <br />
-![Triangulation](https://github.com/stefanoscolapasta/CppRayCastLightingSystem/blob/master/res/triangulation.gif)
+![](https://github.com/stefanoscolapasta/CppRayCastLightingSystem/blob/master/res/triangulation.gif)
 
 ### Built With
 
