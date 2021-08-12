@@ -6,7 +6,7 @@
   <h1 align="center">Lighting Raycast System</h1>
 
   <p align="center">
-    This is a simple lighting system based on raycasting and [polygon triangulation](https://en.wikipedia.org/wiki/Polygon_triangulation), using SFML.
+    This is a simple lighting system based on raycasting and [polygon triangulation]https://en.wikipedia.org/wiki/Polygon_triangulation, using SFML.
     <br />
     <br />
     <br />
