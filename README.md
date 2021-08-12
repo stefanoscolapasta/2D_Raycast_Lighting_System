@@ -34,8 +34,11 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-This is and experimental project I'm working on to learn about Raycasting, Computer Graphics and OpenGl.
+This is an experimental project I'm working on to learn about Raycasting, Computer Graphics and OpenGl.
 <br />
+To get a better grip on what polygon triangulation is and why it is important feel free to open the following links:
+*![Polygon triangulation](https://en.wikipedia.org/wiki/Polygon_triangulation)
+*![Triangle Mesh](https://en.wikipedia.org/wiki/Triangle_mesh)
 It's also my first ever program/code written in C++. I do anyway realize the monstrosities I have writtend and how bad the source code is.
 <br />
 A total refactor of the project will be vital and non-postponable.
