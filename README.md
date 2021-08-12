@@ -3,7 +3,7 @@
 <br />
 <p align="center">
 
-  <h3 align="center">Lighting raycast system</h3>
+  <h1 align="center">Lighting Raycast System</h1>
 
   <p align="center">
     This is a simple lighting system based on raycasting, using SFML.
@@ -43,15 +43,18 @@ A total refactor of the project will be vital and non-postponable.
 <br />
 <br />
 A demo of the lighting system.
+<br />
 ![Raycast lighting](https://github.com/stefanoscolapasta/CppRayCastLightingSystem/blob/master/res/Demo.gif)
 <br />
 <br />
 Here I show how the raycasts are thrown and their contact points.
+<br />
 ![Raycast contact points](https://github.com/stefanoscolapasta/CppRayCastLightingSystem/blob/master/res/raycastsContactAndBoundary.gif)
 <br />
 <br />
 To be able to fill with colour a concave figure a form of triangulation is required, I decided to use the EarCut algorithm, a simple and fast polygon triangulation algorithm.
 The result is not perfect, but can be improved.
+<br />
 ![Triangulation](https://github.com/stefanoscolapasta/CppRayCastLightingSystem/blob/master/res/triangulation.gif)
 ### Built With
 
