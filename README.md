@@ -42,7 +42,6 @@ This is an experimental project I'm working on to learn about Raycasting, Comput
 
 
 It's also my first ever program/code written in C++. I do anyway realize the monstrosities I have writtend and how bad the source code is.\
-A total refactor of the project will be vital and non-postponable.  
   
 A demo of the lighting system. 
   
@@ -87,7 +86,7 @@ Not interactive yet
 <!-- ROADMAP -->
 ## Roadmap
 
-- [ ] Rewriting source code in OOP
+- [X] Rewriting source code in OOP
 - [ ] Adding interactivity
 - [ ] Adding shades blending
 
