@@ -3,10 +3,10 @@
 <br />
 <p align="center">
 
-  <h1 align="center">Lighting Raycast System</h1>
+  <h1 align="center">2D Lighting Raycast System</h1>
 
   <p align="center">
-    This is a simple lighting system based on raycasting and polygon triangulation, using SFML.
+    This is a simple 2D lighting system based on raycasting and polygon triangulation, using SFML.
     <br />
     <br />
     <br />
